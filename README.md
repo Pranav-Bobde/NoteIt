@@ -1,7 +1,7 @@
 Libraries Used:
  Glide
 
-Android Components
+Android Components:
   Room
   Navigation
   
