@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.noteit.notes.NotesFragment"
+        android:label="notes_fragment"
+        tools:layout="@layout/notes_fragment" >
+        <action
+            android:id="@+id/action_notesFragment_to_noteEditFragment"
+            app:destination="@id/noteEditFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_noteDetailsFragment"
+            app:destination="@id/noteDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteEditFragment"
+        android:name="com.example.noteit.noteedit.NoteEditFragment"
+        android:label="note_edit_fragment"
+        tools:layout="@layout/note_edit_fragment" >
+        <action
+            android:id="@+id/action_noteEditFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailsFragment"
+        android:name="com.example.noteit.notedetails.NoteDetailsFragment"
+        android:label="note_details_fragment"
+        tools:layout="@layout/note_details_fragment" >
+        <action
+            android:id="@+id/action_noteDetailsFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+        <argument
+            android:name="note"
+            app:argType="com.example.noteit.data.Note" />
+    </fragment>
+</navigation>
